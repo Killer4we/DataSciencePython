@@ -9,6 +9,17 @@ import pprint
 result = []
 
 # TODO: open the CSV file for reading
-
+with open("filteredQuake.csv","r") as csvfile:
+    reader = csv.reader(csvfile)
+    for row in reader:
+        # print(row)
+        result.append(
+            {
+                "place":row[0],
+                "magnitude":row[1],
+                "link":row[2],
+                "place":row[3]
+            }
+        )
 
 pprint.pp(result)
